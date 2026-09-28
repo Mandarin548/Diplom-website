@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,200..900;1,200..900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("../IMG/grey_back.png");
+    background-position: center;
+    font-family: "Source Serif 4", serif;
+}
+
+.body * {
+    border-color: white;
+}
+
+.main {
+    display: flex;
+    min-height: 100vh;
+}
+
+.section1 {
+    width: 23%;
+    border-right: thin solid rgba(255, 255, 255, 0.342);
+}
+
+.user img {
+    height: 30px;
+    margin-right: 15px;
+    margin-left: 30px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    border-bottom: thin solid rgba(255, 255, 255, 0.342);
+    justify-content: left;
+}
+
+hr {
+    width: 60%;
+    margin-left: 10px;
+    border: none; 
+    background-color:rgba(255, 255, 255, 0.342);
+    height: 1px;
+    margin: 0 10px;
+}
+
+.email, .password, .nickname{
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+}
+
+
+.input {
+    width: 200px;
+    padding: 5px;
+    border: thin solid black;;
+    font-size: 11px;
+    color: rgb(44, 44, 44);
+}
+
+.section2 {
+    width: auto;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
+.txt_settings { 
+    text-align: center;
+    font-size: 17px;
+}
+
+.txt_sections {
+    padding-left: 10px;
+    font-size: 17px;
+    margin-bottom: 16px;
+    margin-left: 5px;
+}
+
+.heading {
+    font-size: 26px;
+    padding-left: 10px;
+}
+
+.form2 {
+    padding: 10px;
+    width: 540px;
+    border: thin solid rgba(255, 255, 255, 0.342);
+    border-radius: 7.5px;
+    height: auto;
+    color: #d7d7d7;
+
+}
+
+.form2 div {
+    display: grid;
+    align-items:center;
+    grid-template-columns: 0.7fr 1fr 0.5fr;
+    grid-template-rows: 1fr;
+    margin-left: 10px;
+}
+
+.btn_save button{
+    font-family: "Source Serif 4", serif;
+    transition: all 0.2s ease;
+    background-color:#5176e4a2;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.btn_save button:active{
+    transform: scale(0.9);
+}
+
+.system button{
+    all: unset;
+}
+
+input {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+}
+
+input::placeholder { 
+    color: rgb(53, 53, 53); 
+}
+
+.hover {
+    cursor: pointer;
+}
+
+.section2 p:hover, label:hover, .white {
+    color: white;
+}
+
+.brown {
+    color: brown;
+}
+
+.notification {
+    display: none;
+    width: 600px;
+}
+
+.notification div {
+    grid-template-columns: 1.1fr 1fr 0.5fr;
+    grid-template-rows: 1fr;
+}
+
+.notification button {
+    width: 100%;
+}
+
+.notification .rangeInput {
+    grid-template-columns: 0.435fr 0.25fr 0.15fr 0.2fr;
+    margin: 16px 0;
+    margin-left: 10px;
+}
+
+#rangeInput {
+    margin-right: 10px;
+}
+
+.custom-select {
+    margin: 16px 0;
+    padding: 2px;
+    width: 85%;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+}
+
+.custom-select:hover {
+    border-color: #888;
+}
+
+.custom-select option {
+    padding: 10px;
+    background-color: #fff;
+    color: #333;
+}
+
+.back_catalog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 42.5px;
+    padding: 0 10px;
+    gap: 10px;
+    margin-top: 15px;
+}
+.back_catalog img {
+    height: 23px;
+    text-align: center;
+}
+
+.back_catalog a {
+    text-decoration: none;
+    color: white;
+}
+
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #3cfa39be;    
+    color: #000000;    
+    padding: 15px 25px;
+    border-radius: 5px;
+    z-index: 1000;
+    transform: translateX(250px);
+    opacity: 0;
+    transition: transform 0.5s, opacity 0.5s;
+}
+.toast.show {
+    transform: translateY(0);
+    opacity: 1;
+}

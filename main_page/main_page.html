@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main_page.css">
+    <script src="main_page.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="../IMG/icon-cloud.png">
+            <a href="main_page.html">PhotoTeka</a>
+        </div>
+        <div class="btn1"><a href="#name">Создать / войти в аккаунт</a></div>
+    </header>
+
+    <main>
+        <div class="main1" id="form">
+            <div class="txt1"><h1>Храните изображения онлайн <br>в удобном виде</h1></div>
+            <div class="cards1">
+                <div class="card">
+                    <img src="../IMG/icon-security.png">
+                    <p>Надежно</p>
+                </div>
+                <div class="card">
+                    <img src="../IMG/icon-free.png">
+                    <p>Бесплатно</p>
+                </div>
+            </div>
+            <div class="cards2">        
+                <div class="card">
+                    <img src="../IMG/icon-convenient.png">
+                    <p>Удобно</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="main2">
+            <div class="form">
+                <p class="start">Начните прямо сейчас</p>
+                <p class="make_acc">Создание аккаунта</p>
+                <form action="form.php" method="POST">
+                    <label for="name">Имя</label>
+                    <input 
+                        type="text" id="name" placeholder="Имя" class="name" name="name"
+                        onkeydown="if(event.code === 'Space') event.preventDefault();"> 
+                    <p class="error">Введите имя</p>
+
+                    <label class="txt_output" for="email">Адрес почты</label>
+                    <input type="text" id="email" placeholder="Адрес почты" name="email">
+                    <p class="error">Введите корректный e-mail</p>
+
+                    <label class="txt_output" class="" for="password">Пароль</label>
+                    <input 
+                        type="text" id="password" placeholder="Пароль" name="password"
+                        onkeydown="if(event.code === 'Space') event.preventDefault();">
+                    <p class="error">Введите не меньше 6 символов</p>
+                    
+                    <button class="btn_make">Создать аккаунт</button>
+                    <p class="error txt_output">Не все поля корректны</p>
+                </form>
+                <div class="login">
+                    <label>Уже есть аккаунт?</label>
+                    <button onclick="change_login()" class="btn_login">Войти</button>
+                </div>
+            </div>
+            <div class="txt2">
+                <p>В условиях стремительного роста объёма цифровой информации особую актуальность приобретает задача эффективного хранения и управления мультимедийными данными, в частности изображениями. Пользователи ежедневно создают и обрабатывают большое количество фотографий, что требует наличия удобных инструментов для их структурирования, каталогизации и быстрого поиска. Одним из таких инструментов является PhotoTeka.</p>
+                <p><font color="#164AE6">PhotoTeka</font> — это современная платформа для хранения и систематизации цифровых изображений, позволяющая эффективно управлять коллекциями фотографий, обеспечивая быстрый доступ и удобный поиск.</p>
+                <p>Загрузите свои изображения, создайте структуру каталогов и получите полный контроль над вашей коллекцией.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <img src="../IMG/icon-cloud.png">
+        <p>PhotoTeka</p>
+        <p class="small">Хостинг изображений</p>
+    </footer>
+    
+</body>
+</html>

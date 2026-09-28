@@ -1,0 +1,561 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('../IMG/grey_back.png');
+    background-color: rgba(0, 0, 0, 0.);
+    background-position: center;
+    background-attachment: fixed;
+    font-family: "Source Serif 4", serif;
+    /* filter: invert(1); */
+}
+
+.dark {
+    display: block;
+    position: fixed;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.0);
+}
+
+header{
+    height: 50px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: thin solid rgba(255, 255, 255, 0.342);
+    font-size: 18px;
+}
+
+header img {
+    height: 30px;
+    margin-left: 40px;
+    margin: 5px 20px;
+}
+.logo, .user {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: white;
+}
+
+.user {
+    padding: 0 50px;
+    border-left: thin solid rgba(255, 255, 255, 0.342);
+    margin: 0 30px;
+}
+
+.logo a {
+    font-family: 'Inter', sans-serif;
+    font-weight:bold;
+    text-decoration: none;
+    color: black;
+    color: rgba(255, 255, 255, 0.496);
+}
+
+.section {
+    height: 50px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    border-bottom: thin solid rgba(255, 255, 255, 0.342);
+    color: white;
+    font-size: 18px;
+}
+
+.section .s1 {
+    width: 23%;
+    box-sizing: border-box;
+    height: 100%;
+    border-right: thin solid rgba(255, 255, 255, 0.342);
+    text-align: center;
+    align-content: center;
+}
+
+.s1 p, .s2 p {
+    margin: 0;
+}
+
+.section .s2 {
+    height: 100%;
+    width: 77%;
+    text-align: center;
+    align-content: center;
+    box-sizing: border-box;
+}
+
+.section2 {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 18px;
+    height: calc(100vh - 100px);
+    box-sizing: border-box;
+}
+
+.section2 .album {
+    display: flex;
+    flex-direction: column;
+    width: 23%;
+    border-right: thin solid rgba(255, 255, 255, 0.342);
+    box-sizing: border-box;
+}
+
+.create_albom:hover{
+    box-shadow: 1px 5px 10px -5px black;
+    transition: all 0.3s ease;
+}
+
+.album img {
+    height: 35px;
+}
+
+.all_album{
+    height: 170px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    padding: 20px 20px;
+}
+
+.all_album .active {
+    margin-left: 20px;
+    color: rgb(0, 0, 0);
+}
+
+.name_album, .create_albom {
+    display: flex;
+    margin-bottom: 10px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.name_album p, .create_albom button {
+    margin: 0;
+    width: 250px;
+    padding: 5px 10px;
+    text-decoration: none;
+    overflow:hidden;
+    text-overflow: ellipsis;
+
+}
+
+.create_albom {
+    justify-content: center;
+    border-top: thin solid rgba(255, 255, 255, 0.342);
+    border-bottom: thin solid rgba(255, 255, 255, 0.342);
+    margin-top: 20px;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+button {
+    background: none;
+    border: 0;
+    color: white;
+    font-size: 18px;
+    font-family: "Source Serif 4", serif;
+    cursor: pointer;
+}
+
+.section2 .catalog {
+    width: 77%;
+    height: 30px;
+}
+
+.catalog img {
+    height: 18px;
+}
+
+.settings {
+    display: flex;
+    margin: 15px;
+    font-size: 13px;
+    color: rgb(255, 255, 255);
+    margin-left: 25px;
+}
+.filter, .sorter, .upload_img {
+    display: flex;
+    margin-right: 30px;
+}
+
+.settings #form_filter {
+    display: flex;
+}
+
+.upload_img {
+    margin-left: auto;
+}
+
+.filter p, .sorter p, .upload_img p{
+    margin: 0;
+    padding-right: 5px;
+}
+
+.dropdown-content > li {
+    cursor: pointer;
+}
+
+.catalog .img_grid {
+    display: grid;
+    height: calc(100vh - 148px);
+    overflow-y: auto;
+    scrollbar-width: none;
+    margin-top: 15px;
+    margin-left: 15px;
+    grid-template-rows: 200px;
+    grid-template-columns: repeat(auto-fit, 100px);
+    grid-auto-rows: 200px;
+    gap: 30px;
+}
+
+.img_grid img{
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+.img_grid p {
+    margin: 0;
+    font-size: 15px;
+    overflow:hidden;
+    text-overflow: ellipsis;
+
+}
+
+.img_grid div {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    width: 190px;
+    margin-top: 180px;
+    top: -130px;
+
+    background-image: url("../IMG/grey_back.png");
+    background-attachment: fixed;
+    background-position: center;
+    list-style: none;
+    border-radius: 15px;
+}
+
+.dropdown-content .brown a, .dropdown-content a{
+    color: rgba(255, 255, 255, 0.805);
+    text-decoration: none;
+    margin-left: 27px;
+    padding: 10px;
+    font-size: 19px;
+}
+
+.dropdown-content .brown a, .brown2 a{
+    color: brown;
+}
+
+.dropdown-content a:hover{
+    color: white;
+}
+
+.dropdown-content .sub_dropdown a:hover {
+    font-size: 14px;
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 1px 3px 20px -5px black;
+}
+
+.dropdown-content li {
+    padding-bottom: 15px;
+    margin-top: 16px;
+}
+
+.dropdown-content2 {
+    width: 112px;
+    margin-top: 20px;
+    top: 110px;
+}
+
+.dropdown-content2 a {
+    font-size: 12px;
+    margin-left: -30px;
+    font-weight:600;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    border-radius: 15px;
+    list-style: none;
+    padding: 0;
+    min-width: 100px;
+    background-image: url("../IMG/grey_back.png");
+    background-attachment: fixed;
+    background-position: center;
+    box-shadow: 1px 3px 20px -5px black;
+}
+
+.sub_dropdown:hover .submenu {
+    display: block;
+}
+.date:hover, .size:hover {
+    display: flex;
+}
+
+.submenu li a {
+    color: white;
+    display: block;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.submenu li {
+    padding-bottom: 0px;
+    margin-top: 0px;
+}
+
+.sub_dropdown {
+    position: relative;
+    
+}
+
+.dropdown-content li > hr {
+    margin: 10px 0;
+    width: 100%;
+    margin: 10px;
+    margin-bottom: -10px;
+    margin-top: 25px;
+    margin-left: -25px;
+}
+
+.submenu hr {
+    border: #000000;
+    width: 70%;
+    margin-left: 10px;
+}
+
+.right_click_menu {
+    display: none;
+    position: absolute;
+    width: 150px;
+    background-image: url("../IMG/grey_back.png");
+    background-attachment: fixed;
+    background-position: center;
+    list-style: none;
+    border-radius: 15px;
+    box-shadow: 1px 3px 20px -5px black;
+}
+
+.right_click_menu li {
+    margin-left: -35px;
+    text-align: center;
+    padding-bottom: 12px;
+    margin-top: 12px;
+}
+
+.name_album input{
+    background: none;
+    width: 250px;
+    margin-left: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 3px 20px -5px black;
+    border: none;
+}
+
+.delete {
+    color: brown;
+}
+
+.file-upload {
+    display: inline-block;
+    padding: 0 10px;
+    cursor: pointer;
+}
+#file-input {
+    display: none;
+}
+#submit{
+    color: white;
+    background: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 17px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    backdrop-filter: blur(30px)
+}
+.modal div {
+    display: flex;
+    justify-content: center;
+}
+.modal img {
+    margin-top: 10px;
+    margin-bottom: 0;
+    width: auto;
+    height: 90%;
+}
+
+.modal p {
+    margin: 0;
+    position: absolute; 
+    bottom: 20px;
+}
+
+.modal .left_arrow {
+    height: 30px;
+    position: absolute;
+    left: 50px;
+    top: 45%;
+}
+.modal .right_arrow {
+    height: 30px;
+    position: absolute;
+    box-sizing: border-box;
+    right: 50px;
+    top: 45%;
+}
+
+.submenu2 {
+    width: 150px;
+    font-size: 15px;
+    max-height: 200px;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.submenu2 p {
+    text-align: left;
+    color: white;
+    margin-left: 40px;
+    overflow:hidden;
+    text-overflow: ellipsis;
+}
+
+.submenu p:hover {
+    font-size: 16px;
+    color: white;
+}
+
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #3cfa39be;    
+    color: #000000;    
+    padding: 15px 25px;
+    border-radius: 5px;
+    z-index: 1000;
+    
+    transform: translateX(250px);
+    opacity: 0;
+    transition: transform 0.5s, opacity 0.5s;
+}
+.toast.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.dropdown-content .size{
+    width: 205px;
+    font-size: 12px;
+    padding: 10px;
+}
+
+.size div {
+    display: flex;
+    justify-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+}
+.settings button {
+    transition: all 0.2s ease;
+    transform: scale(1);
+    background-color:#5176e4a2;
+    border-radius: 10px;
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+    height: 22px;
+    margin-top: 5px;
+}
+
+.settings button:active{
+    transform: scale(0.9);
+}
+
+.dropdown-content .date, .dropdown-content .type {
+    padding: 10px;
+}
+
+.date input {
+    background: none;
+    border: thin solid rgba(255, 255, 255, 0.342);
+    border-radius: 10px;
+    padding: 5px;
+    color: white;
+    margin-left: 5px;
+}
+
+.date label {
+    padding: 5px 0;
+}
+.date div {
+    display: flex;
+    justify-items: center;
+    gap: 5px;
+    margin-left: 5px;
+}
+
+.date .date1{
+    margin: 5px 0;
+}
+
+.date .date2{
+    margin: 15px 0;
+}
+
+.orient, .sort_date {
+    padding: 10px;
+    width: 140px;
+}
+
+.sort_size {
+    padding: 10px;
+    width: 160px;
+}
+
+.sort_alph {
+    padding: 10px;
+    width: 100px;
+}
+
+.type div, .orient div, .sort_date div, .sort_size div, .sort_alph div{
+    margin-bottom: 10px;
+}

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="catalog.css">
+    <script src="catalog.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="toast" id="toast"><!-- Контейнер для уведомления --></div>
+
+    <header>
+        <div class="logo">
+            <img src="../IMG/icon-cloud.png">
+            <a href="catalog.html">PhotoTeka</a >
+        </div>
+        <div class="user dropdown">
+            <img src="../IMG/icon-user.png">
+            <p>MANDARINCCHI</p>
+            <ul class="dropdown-content">
+                <li><a href="../settings/settings.html">Настройки</a></li>
+                <li class="brown"><a style="margin-left: 50px;" href="../main_page/main_page.html">Выход</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <div class="section">
+            <div class="s1">
+                <p>Мои альбомы</p>
+            </div>
+
+            <div class="s2">
+                <p>Каталог изображений</p>
+            </div>
+        </div>
+
+        <div class="section2">
+
+            <div class="album">
+                <div class="all_album">
+                    <!-- Блок с албомами -->
+                </div>
+                <div class="create_albom">
+                    <img src="../IMG/icon-photo-album.png">
+                    <button onclick="create_album()">Создать альбом</button>
+                </div>
+            </div>
+            <div class="catalog">
+                <div class="settings">
+                    <form action="action.php" method="POST" id="form_filter">
+                    <div class="filter dropdown">
+                        <p>Фильтры</p>
+                        <img src="../IMG/icon-filter.png">
+                        <ul class="dropdown-content dropdown-content2">
+                            
+                            <li style="margin-top: 18px;" class="sub_dropdown"><a href="#">Размер</a><hr>
+                                <ul class="submenu size">
+                                    <li>
+                                        <div>
+                                            <label for="rangeInput">От</label>
+                                            <input id="rangeInput" type="range" min="0" max="32" value="0" name="rangeInput">
+                                            <span id="rangeValue">- - - -</span>
+                                        </div>
+                                        <div>
+                                            <label for="rangeInput2">До</label>
+                                            <input id="rangeInput2" type="range" min="0" max="32" value="0" name="rangeInput2">
+                                            <span id="rangeValue2">- - - -</span>
+                                        </div>
+                                        <button type="submit" id="btn_size">Применить</button>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sub_dropdown"><a href="#">Дата загрузки</a><hr>
+                                <ul class="submenu date">
+                                    <li>
+                                    <div class="date1">
+                                        <label for="date">От</label>
+                                        <input type="datetime-local" id="date" name="date">                                 
+                                    </div>
+                                    <div class="date2">
+                                        <label for="date2">До</label>
+                                        <input type="datetime-local" id="date2" name="date2">
+                                    </div>
+                                    <button type="submit" id="btn_date">Применить</button>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sub_dropdown"><a href="#">Ориентация</a><hr>
+                                <ul class="submenu orient">
+                                    <li>
+                                        <div>
+                                            <input type="checkbox" id="gorizont" name="gorizont" value="yes">
+                                            <label for="gorizont">Горизонтальная</label>
+                                        </div>
+                                        <div class="type1">
+                                            <input type="checkbox" id="vert" name="vertical" value="yes">
+                                            <label for="vert">Вертикальная</label>
+                                        </div>
+                                        <div class="type2">
+                                            <input type="checkbox" id="square" name="square" value="yes">
+                                            <label for="square">Квадратная</label>
+                                        </div>
+                                        <button type="submit" id="btn_orient">Применить</button>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sub_dropdown"><a href="#">Тип расширения</a><hr>
+                                <ul class="submenu type">
+                                    <li>
+                                    <div>
+                                        <input type="checkbox" id="jpg" name="type" value="yes">
+                                        <label for="jpg">.jpg</label>
+                                    </div>
+                                    <div class="type1">
+                                        <input type="checkbox" id="png" name="type" value="yes">
+                                        <label for="png">.png</label>
+                                    </div>
+                                    <div class="type2">
+                                        <input type="checkbox" id="webp" name="type" value="yes">
+                                        <label for="webp">.webp</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="gif" name="type" value="yes">
+                                        <label for="gif">.gif</label>
+                                    </div>
+                                    <button type="submit" id="btn_type">Применить</button>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sub_dropdown brown2"><a id="filter_clear" href="#">Сбросить</a></li>
+                        </ul>
+                    </div>
+                    <div class="sorter dropdown">
+                        <p>Сортировка</p>
+                        <img src="../IMG/icon-sorting-order.png">
+                        <ul class="dropdown-content dropdown-content2">
+                            <li  style="margin-top: 18px;" class="sub_dropdown"><a href="#">По дате</a><hr>
+                                <ul class="submenu sort_date">
+                                    <li>
+                                        <div>
+                                            <input type="radio" id="new" name="date">
+                                            <label for="new">Сначала новые</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" id="old" name="date">
+                                            <label for="old">Сначала старые</label>
+                                        </div>
+                                        <button type="submit" id="btn_sort_date">Применить</button>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sub_dropdown"><a href="#">По размеру</a><hr>
+                                <ul class="submenu sort_size">
+                                    <li>
+                                        <div>
+                                            <input type="radio" id="small" name="size">
+                                            <label for="small">Сначала маленькие</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" id="big" name="size">
+                                            <label for="big">Сначала большие</label>
+                                        </div>
+                                        <button type="submit" id="btn_sort_size">Применить</button>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sub_dropdown"><a href="#">По имени</a><hr>
+                                <ul class="submenu sort_alph">
+                                     <li>
+                                        <div>
+                                            <input type="radio" id="alph" name="alph">
+                                            <label for="alph">От А до Я</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" id="realph" name="alph">
+                                            <label for="realph">От Я до А</label>
+                                        </div>
+                                        <button type="submit" id="btn_sort_alph">Применить</button>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sub_dropdown brown2"><a id="sorter_clear" href="#">Сбросить</a></li>
+                        </ul>
+                        </form>
+                    </div>
+                    <form class="upload_img" action="upload_img.php" method="POST" enctype="multipart/form-data">
+                        <label for="file-input" class="file-upload" id="file-name">Загрузить изображение</label>
+                        <input type="file" id="file-input" name="image" accept=".jpg,.png,.webp,.svg,.gif">
+                        <img src="../IMG/icon-image-uploadpng.png">
+                    </form>
+                </div>
+                <div class="modal">
+                    <button class="left_arrow"><img src="../IMG/icon-left-arrow.png"></button>
+                    <button class="right_arrow"><img src="../IMG/icon-right-arrow.png"></button>
+                </div>
+                <div class="img_grid" >
+                    <!-- Блок с изображениями -->
+                    <ul class = "right_click_menu">
+                        <div class="sub_dropdown"><li><button onclick="">Переместить в...</button></li>
+                            <ul class="submenu submenu2"></ul>
+                        </div>
+                        <li><button class="delete" onclick="delete_element(this)">Удалить</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    
+</body>
+</html>

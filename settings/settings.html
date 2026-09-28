@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="settings.css">
+    <script src="settings.js" defer></script>
+    <title>Настройки</title>
+</head>
+<body>
+
+    <div class="toast" id="toast"></div>
+
+    <div class="main">
+        <div class="section1">
+            <div class="user">
+                <img src="../IMG/icon-user.png">
+                <p class="white">MANDARINCCHI</p>
+            </div>
+            <p class="txt_settings white">Настройки</p>
+            <p style="color: white;" class="txt_sections txt_account hover">Аккаунт</p>
+            <hr>
+            <p style="margin-top: 16px;" class="txt_sections txt_notification hover">Уведомления</p>
+        </div>
+        <div class="section2 btn_save">
+            <p class="white heading">Аккаунт</p>
+            <form method="POST" action="../settings/settings.php">
+                <div class="form2 account">
+                    <div class="email">
+                        <label for="email">Изменение e-mail:</label>
+                        <p><input type="text" class="input" placeholder="Новый e-mail:" style="color: black;" id="email" name="email"></input></p>
+                        <button type="submit" name="btn_email">Сохранить</button>
+                    </div>
+                    <div class="password">
+                        <label for="password">Изменение пароля:</label>
+                        <p><input type="text" class="input" placeholder="Новый пароль:" style="color: black;" id="password" name="password"></input></p>
+                        <button type="submit" name="btn_password">Сохранить</button>
+                    </div>
+                    <div class="nickname">
+                        <label for="username">Изменение имени:</label>
+                        <p><input type="text" class="input" placeholder="Новое имя:" style="color: black;" id="username" name="username"></input></p>
+                        <button type="submit" name="btn_username">Сохранить</button>
+                    </div>
+                    <div class="system">
+                        <button type="submit" name="btn_delete"><p class="hover brown">Удаление аккаунта</p></button>
+                    </div>
+                    <div class="system">
+                        <button type="submit" name="btn_exit"><p class="hover">Выход</p></button>
+                    </div>
+                </div>
+                <div class="form2 notification"> 
+                    <div>
+                        <label for="display">Отображение уведомлений:</label>
+                        <select class="custom-select" id="display" name="display">
+                            <option value="all">Все</option>
+                            <option value="success">Только успешные</option>
+                            <option value="system">Только системные</option>
+                            <option value="none">Не отображать</option>
+                        </select>
+                        <button type="submit" name="btn_display">Применить</button>
+                    </div>
+                    <div>
+                        <label for="sound">Звук уведомлений:</label>
+                        <select class="custom-select" id="sound" name="sound">
+                            <option value="all">Для всех</option>
+                            <option value="success">Для успешных</option>
+                            <option value="system">Для системных</option>
+                        </select>
+                        <button type="submit" name="btn_sound">Применить</button>
+                    </div>
+                    <div class="rangeInput">
+                        <label for="rangeInput">Громкость уведомлений:</label>
+                        <input id="rangeInput" type="range" name="volume" value="0" min="0" max="1" step="0.01">
+                        <span id="rangeValue">100 %</span>
+                        <button type="submit" name="btn_volume">Применить</button>
+                    </div>
+                </div>
+            </form>
+            <button class="back_catalog">
+                <a href="../catalog/catalog.html"><img src="../IMG/icon-left-arrow.png"></a>
+                <p><a href="../catalog/catalog.html">Назад в каталог</a></p>
+            </button>
+        </div>
+    </div>
+</body>
+</html>
